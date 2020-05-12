@@ -89,3 +89,11 @@ To start training your own agent, all you have to do is to follow the instructio
 - Navigation-Dueling_DQN-&-Prioritized_experience_replay.ipynb
 
 
+# Future Work
+
+	While working on this project I dealt with many techniques that can be used to improve the Deep Q-Network. Some of these techniques I have already used in this project, and there are other methods like :
+	- multi-level bootstrap targets (A3C) 
+	- Distribution DQN 
+	- Noisy DQN  
+	- Rainbow: combaination of these sex different techniques.
+
