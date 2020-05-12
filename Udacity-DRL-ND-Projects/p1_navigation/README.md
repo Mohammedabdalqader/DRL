@@ -82,7 +82,7 @@ The task is episodic, and in order to solve the environment, the agent must get 
 
 ### Instructions
 
-To get started with training your own agent you just need to follow the instructions which provided in each of these 3 Jupyter notebooks:
+To start training your own agent, all you have to do is to follow the instructions included in each of these 3 Jupyter notebooks:
 
 - Navigation-Double_DQN.ipynb
 - Navigation-Dueling_DQN.ipynb
