@@ -1,6 +1,9 @@
 [//]: # (Image References)
 
 [image1]: https://user-images.githubusercontent.com/10624937/42135619-d90f2f28-7d12-11e8-8823-82b970a54d7e.gif "Trained Agent"
+[result1]: results/Double.png "Double"
+[result2]: results/Dueling.png "Dueling"
+[result3]: results/PER.png "PER"
 
 # Project 1: Navigation
 
@@ -8,8 +11,8 @@ After learning several reinforcement learning algorithms and techniques during U
 
 For this project I have trained my Agent with 3 different methods:
 - **`Double DQN`**
-- **`Deuling DQN`**
-- **`Deuling DQN with Prioratized experience replay`**
+- **`Dueling DQN`**
+- **`Dueling DQN with Prioratized experience replay`**
 
 You will find all these implementations and checkpoints in the "Udacity-DRL-ND-Projects" folder
 
@@ -89,11 +92,18 @@ To start training your own agent, all you have to do is to follow the instructio
 - Navigation-Dueling_DQN-&-Prioritized_experience_replay.ipynb
 
 
+# Results
+| Double DQN | Dueling DQN | Dueling & Prioratized experience replay |
+| ---------- | ---------- | ---------- |
+|![Double][result1] | ![Dueling][result2] | ![PER][result3] | 
 # Future Work
 
-	While working on this project I dealt with many techniques that can be used to improve the Deep Q-Network. Some of these techniques I have already used in this project, and there are other methods like :
+While working on this project I dealt with many techniques that can be used to improve the Deep Q-Network. Some of these techniques I have already used in this project, and there are other methods like :
+
 	- multi-level bootstrap targets (A3C) 
 	- Distribution DQN 
 	- Noisy DQN  
 	- Rainbow: combaination of these sex different techniques.
+	
+After implemnting these methods i will update this Repo and share the results :smiley:	
 
