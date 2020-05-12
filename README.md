@@ -43,7 +43,7 @@ The task is episodic, and in order to solve the environment, the agent must get 
 	- __Windows__: 
 	```bash
 	conda create --name drl python=3.6 
-	activate drlnd
+	activate drl
 	```
 	
 2. Follow the instructions in [this repository](https://github.com/openai/gym) to perform a minimal install of OpenAI gym.  
