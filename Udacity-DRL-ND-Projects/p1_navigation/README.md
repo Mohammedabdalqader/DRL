@@ -6,7 +6,7 @@
 
 After learning several reinforcement learning algorithms and techniques during Udacity DLR Nanodegree, I worked on Navigation Project and I will share my implementations for this project with you. 
 
-For this project I have trained my Aget with 3 different methods:
+For this project I have trained my Agent with 3 different methods:
 - **`Double DQN`**
 - **`Deuling DQN`**
 - **`Deuling DQN with Prioratized experience replay`**
@@ -72,16 +72,20 @@ The task is episodic, and in order to solve the environment, the agent must get 
     (For Windows (64-bit) users) I have provided Unity enviroment for this Project for you, so you don't need to download it by yourself 
 
 
-5. Create an IPython kernel for the drl (deep reinforcement learning) environment.
+6. Create an IPython kernel for the drl (deep reinforcement learning) environment.
     ```bash
     python -m ipykernel install --user --name drl --display-name "drl"
     ```
 
-6. Before running code in a notebook, change the kernel to match the `drl` environment by using the drop-down `Kernel` menu. 
+7. Before running code in a notebook, change the kernel to match the `drl` environment by using the drop-down `Kernel` menu. 
 
 
 ### Instructions
 
-Follow the instructions in `Navigation.ipynb` to get started with training your own agent!  
+To get started with training your own agent you just need to follow the instructions which provided in each of these 3 Jupyter notebooks:
+
+- Navigation-Double_DQN.ipynb
+- Navigation-Dueling_DQN.ipynb
+- Navigation-Dueling_DQN-&-Prioritized_experience_replay.ipynb
 
 
