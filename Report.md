@@ -136,6 +136,11 @@ Here i give you a brief overview hyparameter, which i used in this project:
 
 ### Future Work
 
-I have used 3 different techniques to improve the original DQN and plan to use other techniques like "Rainbow" which is the combaination of sex different techniques. 
+While working on this project I dealt with many techniques that can be used to improve the Deep Q-Network. Some of these techniques I have already used in this project, and there are other methods like :
+
+	- multi-level bootstrap targets (A3C) 
+	- Distribution DQN 
+	- Noisy DQN  
+	- Rainbow: combaination of these sex different techniques.
 
 I also accept Udacity challenge regarding navigation-pixels project, where the input is an **84x84 RGB image** instead of **state** as vector with 37 values. 
