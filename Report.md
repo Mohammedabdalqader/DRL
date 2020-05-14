@@ -2,6 +2,10 @@
 
 [dqn]: Navigation/images/dqn.jpg "dqn"
 [model]: Navigation/images/DQNvsDueling.png "model"
+[result]: Navigation/results/DQN.png "DQN"
+[result1]: Navigation/results/Double.png "Double"
+[result2]: Navigation/results/Dueling.png "Dueling"
+[result3]: Navigation/results/PER.png "PER"
 
 # Navigation
 
@@ -10,7 +14,7 @@ In this report I will explain everything about this project in details. So we wi
 - **Deep Q-Learning improvements**
 - **Model architectures**
 - **Hayperparameters**
-- **Further work**
+- **Future Work**
 
 
 ### Deep Q-Learning
@@ -78,3 +82,60 @@ It outperforms each of the individual modifications and achieves state-of-the-ar
 
 ![model][model]
 
+
+**DQN Architecture**
+
+Both DQ-Networks (local and target) consist of 5 fully-connected layers ( 4 hidden layers, 1 output layers) each of hidden layers followed by a Relu activation function.
+
+The number of neurons of the fully-connected layers are as follows:
+
+- fc1 , number of neurons: 32,
+- fc2 , number of neurons: 64,
+- fc3 , number of neurons: 64,
+- fc4 , number of neurons: 64,
+
+- actions , number of neurons: 4,
+
+**Dueling DQN Architecture**
+
+As you can see from the picture above, the only difference between DQN and Dueling architecture is that Dueling DQN has two output layers, one called the advantage layer and the other called the value layer.
+
+`Advantage function` captures how better an action is compared to the others at a given state, while as we know the `value function` captures how good it is to be at this state and The whole idea behind Dueling Q Networks relies on the representation of the Q function as a sum of the Value and the advantage function. We simply have two networks to learn each part of the sum and then we aggregate their outputs.
+
+
+The number of neurons of the fully-connected layers are as follows:
+
+- fc1 , number of neurons: 32,
+- fc2 , number of neurons: 64,
+- fc3 , number of neurons: 64,
+- fc4 , number of neurons: 64,
+
+- advantage , number of neurons: 4,
+- value , number of neurons: 1,
+
+
+### Hayperparameters
+
+we know that Hyperparameters play an important role in deep learning, and it is a challenge to find the right values of hyperparameters. 
+Here i give you a brief overview hyparameter, which i used in this project:
+
+- learning rate    : 4e-5 
+- number of layers : 5 - 6 Layers
+- number of neurons: 4,32,64
+- mini-batch size  : 64
+- discount factor  : 0.99  
+- TAU              : 1e-3
+- epsilon start    : 1.0
+- epsilon decay    : 0.99
+
+### Results
+
+| Original DQN | Double DQN | Dueling DQN | Dueling & Prioratized experience replay |
+| ---------- | ---------- | ---------- | ---------- |
+|![DQN][result]|![Double][result1] | ![Dueling][result2] | ![PER][result3] | 
+
+### Future Work
+
+I have used 3 different techniques to improve the original DQN and plan to use other techniques like "Rainbow which is the combaination of sex different techniques. 
+
+I also accept Udacity challenge regarding navigation-pixels project, where the input is an **84x84 RGB image** instead of **state** as vector with 37 values. 
