@@ -110,3 +110,7 @@ While working on this project I dealt with many techniques that can be used to i
 	
 After implemnting these methods i will update this Repo and share the results :smiley:	
 
+I also accept Udacity challenge regarding navigation-pixels project, where the input is an **84x84 RGB image** instead of **state** as vector with 37 values. 
+
+	
+
