@@ -1,7 +1,7 @@
 [//]: # (Image References)
 
-[dqn]: images/dqn.jpg "dqn"
-[model]: images/DQNvsDueling.png "model"
+[dqn]: Navigation/images/dqn.jpg "dqn"
+[model]: Navigation/images/DQNvsDueling.png "model"
 
 # Navigation
 
@@ -75,9 +75,6 @@ It outperforms each of the individual modifications and achieves state-of-the-ar
 
 
 ### Model architectures
-<<<<<<< HEAD
 
 ![model][model]
 
-=======
->>>>>>> 34e16399cf1d04939921599d7b7646f5338fc6cb
