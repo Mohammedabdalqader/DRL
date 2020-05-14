@@ -1,3 +1,7 @@
+'''
+This implementation is taken from here:
+https://github.com/rlcode/per
+'''
 import random
 import numpy as np
 from SumTree import SumTree
