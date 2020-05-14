@@ -136,6 +136,6 @@ Here i give you a brief overview hyparameter, which i used in this project:
 
 ### Future Work
 
-I have used 3 different techniques to improve the original DQN and plan to use other techniques like "Rainbow which is the combaination of sex different techniques. 
+I have used 3 different techniques to improve the original DQN and plan to use other techniques like "Rainbow" which is the combaination of sex different techniques. 
 
 I also accept Udacity challenge regarding navigation-pixels project, where the input is an **84x84 RGB image** instead of **state** as vector with 37 values. 
