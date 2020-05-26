@@ -1,3 +1,8 @@
+'''
+This implementation is taken from here:
+https://github.com/rlcode/per
+'''
+
 import numpy
 
 
