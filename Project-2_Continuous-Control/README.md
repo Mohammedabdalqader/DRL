@@ -7,7 +7,7 @@
 
 # Project 2: Continuous Control
 
-For this project I have trained my Agent with DDDDPG:
+For this project I have trained my Agent with Distributed distributional deep deterministic policy gradients(D4PG) algorithm:
 
 You will find my implementation and checkpoints in the "Continuous-Control" folder
 
