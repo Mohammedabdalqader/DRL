@@ -78,14 +78,14 @@ The barrier for solving the second version of the environment is slightly differ
 	* Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86_64.zip)
 		
 
-	**`Version 2: Twenty (20) Agents`**
+    **`Version 2: Twenty (20) Agents`**:
 	
-		* Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux.zip)
-		* Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher.app.zip)
-		* Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86.zip)
-		* Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86_64.zip)
+	* Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux.zip)
+	* Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher.app.zip)
+	* Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86.zip)
+	* Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86_64.zip)
 		
-	Then, place the file in the Continuous-Control/ folder in the DRL GitHub repository, and unzip (or decompress) the file.
+    Then, place the file in the Continuous-Control/ folder in the DRL GitHub repository, and unzip (or decompress) the file.
 		
     (For Windows (64-bit) users) I have provided **`Version 2`** Unity enviroment for this Project for you, so you don't need to download it by yourself 
 
