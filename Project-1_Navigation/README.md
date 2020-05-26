@@ -55,12 +55,12 @@ The task is episodic, and in order to solve the environment, the agent must get 
 3. Clone the Repository, and navigate to the DRL/Navigation/  folder
     ```bash
     git clone https://github.com/Mohammedabdalqader/DRL.git
-    cd DRL/Navigation
+    cd DRL/Project-1_Navigation/Navigation
     ```
 4. Set up your Python environment. 
     you will install PyTorch, the ML-Agents toolkit, and a few more Python packages required for this project.
     ```
-    cd python/
+    cd ../python/
     pip install .
     ```
 
