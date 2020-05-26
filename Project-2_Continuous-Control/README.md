@@ -24,7 +24,7 @@ Thus, the goal of the agent is to maintain its position at the target location f
 The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four numbers,
 corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
 
-In this Repo i provided you with two differen enviroments
+In this repo I have provided you with two different environments
 
 **`Option 1`**: First Version
 The task is episodic, and in order to solve the environment, your agent must get an average score of +30 over 100 consecutive episodes.
