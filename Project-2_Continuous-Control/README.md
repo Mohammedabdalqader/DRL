@@ -115,6 +115,6 @@ While working on this project I dealt with many algorithms that can be used to s
 	- Asynchronous Advantage Actor-Critic (A3C)
 	- Trust Region Policy Optimization (TRPO)
 	
-After implemnting these methods i will update this Repo and share the results :smiley:	
+After implemnting these algorithms i will update this Repo and share the results with you :smiley:	
 	
 
