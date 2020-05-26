@@ -1,8 +1,8 @@
 [//]: # (Image References)
 
-[random_agents]: images/random_agents.gif "RA"
-[trained_agents]: images/trained_agents.gif "TA"
-[result]: images/d4pg.png "D4PG"
+[random_agents]: Continuous-Control/images/random_agents.gif "RA"
+[trained_agents]: Continuous-Control/images/trained_agents.gif "TA"
+[result]: Continuous-Control/images/d4pg.png "D4PG"
 
 
 # Project 2: Continuous Control
