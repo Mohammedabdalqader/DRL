@@ -72,7 +72,8 @@ The task is episodic, and in order to solve the environment, the agent must get 
     * Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)
     * Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86.zip)
     * Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86_64.zip)
-    Then, place the file in the p1_navigation/ folder in the DRLND GitHub repository, and unzip (or decompress) the file.
+    
+    Then, place the file in the Navigation/ folder in the DRLND GitHub repository, and unzip (or decompress) the file.
 
     (For Windows (64-bit) users) I have provided Unity enviroment for this Project for you, so you don't need to download it by yourself 
 
