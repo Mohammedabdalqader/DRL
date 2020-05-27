@@ -19,7 +19,7 @@ In this report I will explain everything about this project in details. So we wi
 
 ### Actor-Critic
 
-Actor-critical algorithms are the basis behind almost every modern RL method like PPO, A3C and so on. So to understand all these new techniques, you definitely need a good understanding of what actor-critic is and how it works.
+Actor-critical algorithms are the basis behind almost every modern RL method like PPO, A3C and many more. So to understand all these new techniques, you definitely need a good understanding of what actor-critic is and how it works.
 
 Let us first distinguish between value-based and policy-based methods:
 
@@ -29,7 +29,58 @@ Each method has its advantages. For example, policy-based methods are better sui
 
 Actor-critics aim to take advantage of all the good points of both the value-based and the policy-based while eliminating all their disadvantages.  
 
-![ac][actor-critic]
 The basic idea is to split the model into two parts: one to calculate an action based on a state and another to generate the Q-values of the action. 
 
+![ac][actor-critic]
 
+Actor  : decides which action to take
+Critic : tells the actor how good its action was and how it should adjust.
+
+### Distributed distributional deep deterministic policy gradients (D4PG) algorithm
+
+The core idea in this algorithm is to replace a single Q-value from the critic with N_ATOMS values, corresponding to the probabilities of values from the pre-defined range. The Bellman equation is replaced with the Bellman operator, which transforms this distributional representation in a similar way.
+
+### Model architectures
+
+**Actor Architecture**
+
+Both Actor-Networks (local and target) consist of 3 fully-connected layers ( 2 hidden layers, 1 output layers) each of hidden layers followed by a Relu activation function and Batch Normalization layer.
+
+The number of neurons of the fully-connected layers are as follows:
+
+- fc1 , number of neurons: 400,
+- fc2 , number of neurons: 300,
+- fc3 , number of neurons: 4 (number of actions),
+
+**Critic Architecture**
+
+Both Critic-Networks (local and target) consist of 3 fully-connected layers ( 2 hidden layers, 1 output layers) each of hidden layers followed by a Relu activation function.
+
+The number of neurons of the fully-connected layers are as follows:
+
+- fc1 , number of neurons: 400,
+- fc2 , number of neurons: 300,
+- fc3 , number of neurons: 51 (number of atoms),
+
+
+### Hyperparameters
+
+There were many hyperparameters involved in the experiment. The value of each of them is given below:
+
+| Hyperparameter                      | Value |
+| ----------------------------------- | ----- |
+| Replay buffer size                  | 1e5   |
+| Batch size                          | 256  |
+| $\gamma$ (discount factor)          | 0.99  |
+| $\tau$                              | 1e-3  |
+| Actor Learning rate                 | 1e-3  |
+| Critic Learning rate                | 1e-3  |
+| Update interval                     | 1    |
+| Update times per interval           | 1    |
+| Number of episodes                  | 2000 (max)   |
+| Max number of timesteps per episode | 1000  |
+| Number of atoms                  | 51  |
+| Vmin | -10  |
+| Vmax | +10  |
+
+### Future Work
