@@ -1,19 +1,17 @@
 [//]: # (Image References)
 
 [actor-critic]: Continuous-Control/images/actor-critic.png "ac"
+[d4pg]: Continuous-Control/images/d4pg.png "d4pg"
 
 
 # Continuous Control
-
-While working on this project, I had to invest too much time in research to find the right algorithms for such a problem. There were many options available to me, and this was a challenge for me, and from here my journey began.
-
-There is really a very useful [repo](https://github.com/ShangtongZhang/DeepRL) that describes and implements different algorithms that work very well for such a problem with continuous action space. Thanks to this repo and other sources, I was able to understand some algorithms correctly, including the DDPG, D4PG, PPO, A2C, and A3C algorithms, and I was able to implement some of these algorithms to solve my problem.
 
 In this report I will explain everything about this project in details. So we will look at different aspects like:
 - **Actor-Critic**
 - **Distributed distributional deep deterministic policy gradients (D4PG) algorithm**
 - **Model architectures**
 - **Hayperparameters**
+- **Result**
 - **Future Work**
 
 
@@ -83,4 +81,28 @@ There were many hyperparameters involved in the experiment. The value of each of
 | Vmin | -10  |
 | Vmax | +10  |
 
+
+### Result
+
+![d4pg][d4pg]
+
+
 ### Future Work
+
+While working on this project, I had to invest too much time in research to find the right algorithms for such a problem. There were many options available to me, and this was a challenge for me, and from here my journey began.
+
+There is really a very useful [repo](https://github.com/ShangtongZhang/DeepRL) that describes and implements different algorithms that work very well for such a problem with continuous action space. Thanks to this repo and other sources, I was able to understand some algorithms correctly, including the DDPG, D4PG, PPO, A2C, and A3C algorithms, and I was able to implement some of these algorithms to solve my problem.
+
+* Implementing TRPO, PPO, A3C, A2C algorithms:
+
+It is worthwhile to implement all these algorithms, so I will work on it in the next days and see which of these algorithms converges faster. 
+
+* Adjusting the Hyperparameters:
+
+The more important step I can also take to improve the results and solve the problem with 100 episodes or even < 100 is to adjust the hyper parameters. 
+
+* Using prioritized experience replay and N-step techniques:
+
+As mentioned in this paper https://openreview.net/forum?id=SyZipzbCb using techniques with D4PG could potentially lead to better results
+
+After implementing other algorithms i will share the results with you in this Repo.
