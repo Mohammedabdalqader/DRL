@@ -31,7 +31,9 @@ The basic idea is to split the model into two parts: one to calculate an action 
 
 ![ac][actor-critic]
 
+
 Actor  : decides which action to take
+
 Critic : tells the actor how good its action was and how it should adjust.
 
 ### Distributed distributional deep deterministic policy gradients (D4PG) algorithm
