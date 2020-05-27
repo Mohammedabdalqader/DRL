@@ -86,6 +86,8 @@ There were many hyperparameters involved in the experiment. The value of each of
 
 ### Result
 
+The average reward is reached after 294 episodes.
+
 ![d4pg][d4pg]
 
 
