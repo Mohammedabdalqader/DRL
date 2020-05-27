@@ -95,6 +95,8 @@ While working on this project, I had to invest too much time in research to find
 
 There is really a very useful [repo](https://github.com/ShangtongZhang/DeepRL) that describes and implements different algorithms that work very well for such a problem with continuous action space. Thanks to this repo and other sources, I was able to understand some algorithms correctly, including the DDPG, D4PG, PPO, A2C, and A3C algorithms, and I was able to implement some of these algorithms to solve my problem.
 
+Here are some Ideas for improvement:
+
 * Implementing TRPO, PPO, A3C, A2C algorithms:
 
 It is worthwhile to implement all these algorithms, so I will work on it in the next days and see which of these algorithms converges faster. 
