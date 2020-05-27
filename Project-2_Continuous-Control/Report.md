@@ -103,9 +103,9 @@ Here are some Ideas for improvement:
 
 * Adjusting the Hyperparameters:
 
-  The more important step I can also take to improve the results and solve the problem with 100 episodes or even < 100 is to adjust the   hyper parameters. 
+  The more important step I can also take to improve the results and solve the problem with 100 episodes or even < 100 is to adjust the   hyperparameters. 
 
 * Using prioritized experience replay and N-step techniques:
 
-  As mentioned in this paper https://openreview.net/forum?id=SyZipzbCb using techniques with D4PG could potentially lead to better  results
+  As mentioned in this paper https://openreview.net/forum?id=SyZipzbCb using these techniques with D4PG could potentially lead to better  results
 
