@@ -71,8 +71,8 @@ There were many hyperparameters involved in the experiment. The value of each of
 | ----------------------------------- | ----- |
 | Replay buffer size                  | 1e5   |
 | Batch size                          | 256  |
-| $\gamma$ (discount factor)          | 0.99  |
-| $\tau$                              | 1e-3  |
+| discount factor          | 0.99  |
+| TAU                              | 1e-3  |
 | Actor Learning rate                 | 1e-3  |
 | Critic Learning rate                | 1e-3  |
 | Update interval                     | 1    |
