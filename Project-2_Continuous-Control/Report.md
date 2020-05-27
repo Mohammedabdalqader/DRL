@@ -99,13 +99,13 @@ Here are some Ideas for improvement:
 
 * Implementing TRPO, PPO, A3C, A2C algorithms:
 
-It is worthwhile to implement all these algorithms, so I will work on it in the next days and see which of these algorithms converges faster. 
+  It is worthwhile to implement all these algorithms, so I will work on it in the next days and see which of these algorithms converges   faster. 
 
 * Adjusting the Hyperparameters:
 
-The more important step I can also take to improve the results and solve the problem with 100 episodes or even < 100 is to adjust the hyper parameters. 
+  The more important step I can also take to improve the results and solve the problem with 100 episodes or even < 100 is to adjust the   hyper parameters. 
 
 * Using prioritized experience replay and N-step techniques:
 
-As mentioned in this paper https://openreview.net/forum?id=SyZipzbCb using techniques with D4PG could potentially lead to better results
+  As mentioned in this paper https://openreview.net/forum?id=SyZipzbCb using techniques with D4PG could potentially lead to better  results
 
