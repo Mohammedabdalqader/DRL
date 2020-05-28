@@ -13,6 +13,7 @@ In this report I will explain everything about this project in details. So we wi
 - **MADDPG (Multi-Agent Deep Deterministic Policy Gradient) algorithm**
 - **Model architectures**
 - **Hayperparameters**
+- **Training Process**
 - **Result**
 - **Future Work**
 
@@ -48,9 +49,20 @@ Similar to the "Actor Critic" architecture with only one agent, each agent has i
 
 But what I have implemented For this project is a **competitive version** of MADDPG (Multi-Agent Deep Deterministic Policy Gradient). Each agent has its own DDPG actor-critic architecture and does not communicate with other agents (but sharing the same Memory) and the goal of each agent is to maximize their own returns.
 
-
+The reason why I have chosen this algorithm is that this algorithm has achieved a good result on various problems
 
 ### Model architectures
+
+Regarding the model I have experimented too much with it, I have tried different architecture (one of them was taken from this [paper](https://arxiv.org/pdf/1509.02971.pdf))and here are some of them:
+
+|  | # Hidden Layers(Actor)|# neurons (Actor)| # Hidden Layers(Critic) |# neurons (Critic)| Batch Normalization|
+| ---------- | ---------- |---------- |---------- |---------- |---------- |
+|1|2|[400,300]|2|[400,300]|:x:|
+|2|2|[400,300]|2|[400,300]|:heavy_check_mark:|
+|3|2|[400,300]|3|[400,300,300]|:heavy_check_mark:|
+|3|2|[400,300]|4|[128,64,64,32]|:heavy_check_mark:|
+|4|3|[400,300,300]|4|[128,64,64,32]|:heavy_check_mark: Best Results|
+
 
 **Actor Architecture**
 
@@ -94,6 +106,188 @@ There were many hyperparameters involved in the experiment. The value of each of
 | Number of episodes                  | 250 (max)   |
 | epsilon start | 1.0 |
 | epsilon decay | 0.99 |
+
+# Training Process
+
+I will now explain the training process in detail.
+
+1- I have defined a class called maddpg that takes (state_size,action_size,num_agents) as input and prepares the models for each agent and some necessary functions.
+
+
+```
+class maddpg():
+    
+    def __init__(self,state_size,action_size,num_agents,random_seeds):
+        
+        self.state_size   = state_size
+        self.action_size  = action_size
+        self.num_agents   = num_agents
+        self.random_seeds = random_seeds
+        self.agents = [Agent(self.state_size,self.action_size,random_seeds[i]) for i in range(self.num_agents)]
+        self.memory = ReplayBuffer(action_size, BUFFER_SIZE, BATCH_SIZE, seed = 7)
+        
+    def act(self,states,add_noise = True):
+        
+        actions = [agent.act(state,add_noise) for agent,state in zip(self.agents,states)]
+        return actions
+
+    def reset(self):
+        for i in range(self.num_agents):
+            self.agents[i].reset()
+            
+    def step(self, states, actions, rewards, next_states, dones):
+        """Save experience in replay memory, and use random sample from buffer to learn."""
+        # Save experience / reward
+        for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
+        #for idx, agent in enumerate(self.maddpg_agent):
+            self.memory.add(state, action, reward, next_state, done)
+
+
+        # Learn, if enough samples are available in memory
+        if len(self.memory) > BATCH_SIZE:
+            for agent in self.agents:
+                for _ in range(LEARN_NUMBER):
+                    experiences = self.memory.sample()
+                    agent.learn(experiences)
+```
+
+2- In class **Agent()** i initialize actor-critic model for each agents
+
+```
+class Agent():
+    '''Interact with and learn from environment.'''
+
+    def __init__(self, state_size, action_size,seed):
+        .
+        .
+        .
+        
+        # Actor network (w/ target network)
+        self.actor_local = Actor(self.state_size, self.action_size, seed).to(device)
+        self.actor_target = Actor(self.state_size, self.action_size, seed).to(device)
+        self.actor_optimizer = optim.Adam(self.actor_local.parameters(), lr=self.LR_ACTOR)
+
+        # Critic network (w/ target network)
+        self.critic_local = Critic(self.state_size, self.action_size, seed).to(device)
+        self.critic_target = Critic(self.state_size, self.action_size, seed).to(device)
+        self.critic_optimizer = optim.Adam(self.critic_local.parameters(), lr=self.LR_CRITIC, weight_decay=self.WEIGHT_DECAY)
+        .
+        .
+        .
+```
+
+3- Actor-Critic Model
+
+```
+class Actor(nn.Module):
+    """Actor (Policy) Model."""
+
+    def __init__(self, state_size, action_size, seed, hidden_units=[400,300,300]):
+        """Initialize parameters and build model.
+        Params
+        ======
+            state_size (int): Dimension of each state
+            action_size (int): Dimension of each action
+            seed (int): Random seed
+            fc1_units (int): Number of nodes in first hidden layer
+            fc2_units (int): Number of nodes in second hidden layer
+        """
+        super(Actor, self).__init__()
+        self.seed = torch.manual_seed(seed)
+        
+
+        # Hidden Layers 
+        self.fc1 = nn.Linear(state_size, hidden_units[0])
+        self.fc2 = nn.Linear(hidden_units[0], hidden_units[1])
+        self.fc3 = nn.Linear(hidden_units[1], hidden_units[2])
+        self.fc4 = nn.Linear(hidden_units[2], action_size)
+        self.reset_parameters()
+        
+        # Batch Normalization
+        self.bn1 = nn.BatchNorm1d(hidden_units[0])
+        self.bn2 = nn.BatchNorm1d(hidden_units[1])
+        self.bn3 = nn.BatchNorm1d(hidden_units[2])
+
+    def reset_parameters(self):
+        self.fc1.weight.data.uniform_(*hidden_init(self.fc1))
+        self.fc2.weight.data.uniform_(*hidden_init(self.fc2))
+        self.fc3.weight.data.uniform_(*hidden_init(self.fc3))
+
+        self.fc4.weight.data.uniform_(-3e-3, 3e-3)
+
+    def forward(self, states):
+        """Build an actor (policy) network that maps states -> actions."""
+        x = F.relu(self.bn1(self.fc1(states)))
+        x = F.relu(self.bn2(self.fc2(x)))
+        x = F.relu(self.bn3(self.fc3(x)))
+        return F.tanh(self.fc4(x))
+        
+class Critic(nn.Module):
+    """Critic (Value) Model."""
+
+    def __init__(self, state_size, action_size, seed, hidden_units=[128,64,64,32]):
+        """Initialize parameters and build model.
+        Params
+        ======
+            state_size (int): Dimension of each state
+            action_size (int): Dimension of each action
+            seed (int): Random seed
+            fcs1_units (int): Number of nodes in the first hidden layer
+            fc2_units (int): Number of nodes in the second hidden layer
+        """
+        super(Critic, self).__init__()
+        self.seed = torch.manual_seed(seed)
+        
+        
+        # Hidden Layers
+        self.fcs1 = nn.Linear(state_size, hidden_units[0])
+        self.fc2 = nn.Linear(hidden_units[0] + action_size , hidden_units[1])
+        self.fc3 = nn.Linear(hidden_units[1], hidden_units[2])
+        self.fc4 = nn.Linear(hidden_units[2], hidden_units[3])
+        self.fc5 = nn.Linear(hidden_units[3], 1)
+        self.reset_parameters()
+
+        # Batch Normalization
+        self.bn = nn.BatchNorm1d(hidden_units[0])
+
+
+    def reset_parameters(self):
+        self.fcs1.weight.data.uniform_(*hidden_init(self.fcs1))
+        self.fc2.weight.data.uniform_(*hidden_init(self.fc2))
+        self.fc3.weight.data.uniform_(*hidden_init(self.fc3))
+        self.fc4.weight.data.uniform_(*hidden_init(self.fc4))
+        self.fc5.weight.data.uniform_(-3e-3, 3e-3)
+
+
+    def forward(self, states, actions):
+        """Build a critic (value) network that maps (state, action) pairs -> Q-values."""
+        x_ = F.relu(self.bn(self.fcs1(states)))
+        x  = torch.cat((x_, actions), dim=1)
+        x  = F.relu(self.fc2(x))
+        x  = F.relu(self.fc3(x))
+        x  = F.relu(self.fc4(x))
+
+        return self.fc5(x)
+
+```
+
+4- Befor training the agents i intialize the agents models and all other function.
+
+```
+m_agent = maddpg(state_size=state_size, action_size=action_size,num_agents=num_agents, random_seeds=[0,1])
+
+```
+
+5- Now it's training time.
+
+  * at the beginning of each episode I reset the environment.
+  * each agent will receive his own local observation and act with the environment and then estimate the best action (Local Actor Network) 
+  * After each agent has estimated the action to be taken... some noise is added to this action and then each agent will take this action and receive (new_state,reward,done(wither the epsiode has finished or not and some info)
+  * Each agent adds its experience to the replay buffer (memory sharing)
+  * Is it time to update the models? Take some experience from memory sharing and train the local actor critical model for each agent, then update the traget actor critical model with soft update.
+  * Iterate until we reach the desired average reward which is in our case  +0.5 over 100 consecutive episodes, after taking the maximum over both agents.
+  
+
 
 # Results
 The desired average reward is achieved after 196 episodes.
