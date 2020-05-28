@@ -1,6 +1,6 @@
 [//]: # (Image References)
 
-[trained_agents]: Collaboration_and_Competition/images/traind_agents.gif "TA"
+[trained_agents]: Collaboration_and_Competition/images/trained_agents.gif "TA"
 [result]: Collaboration_and_Competition/images/maddpg.png "MADDPG"
 
 
