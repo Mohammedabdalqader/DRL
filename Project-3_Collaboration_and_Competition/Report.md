@@ -7,8 +7,6 @@
 
 # Multi-Agent Collaboration and Competition
 
-For this project I have trained my Agents with MADDPG (Multi-Agent Deep Deterministic Policy Gradient) algorithm in a competitive environment where the goal of each agent is to maximize its own returns.
-
 In this report I will explain everything about this project in details. So we will look at different aspects like:
 
 - **Actor-Critic**
@@ -48,9 +46,8 @@ To achieve the desired average score, a multi-agent DDPG (deep deterministic Pol
 
 Similar to the "Actor Critic" architecture with only one agent, each agent has its own network of actors and critics. The input for the actor network is the current state of the agent and the output is an suitable action for that agent in that state. The critic part, however, is slightly different from the usual single agent DDPG. Here the critic network of each agent has full visibility on the environment. It records not only the observation and action of this particular agent, but also the observations and actions of all other agents. (Collaboration and Competition Situation)
 
+But what I have implemented For this project is a **competitive version** of MADDPG (Multi-Agent Deep Deterministic Policy Gradient). Each agent has its own DDPG actor-critic architecture and does not communicate with other agents and the goal of each agent is to maximize their own returns.
 
-
-But what I have implemented here is a competitive version of multi-agent DDPG where the goal of each agent is to maximize their own returns.
 
 
 ### Model architectures
@@ -107,3 +104,5 @@ There were many hyperparameters involved in the experiment. The value of each of
 
 After 2 months with the excellent knowledge that this course has given us, I can say that I have taken a big step towards mastering this area. I am able to implement different algorithms and to select a suitable one for each problem.
 In this project i have a chieved a very good result, in less than 200 episodes the target average reward achieved (> 0.50) and in 250 episode the average reward was 1.338 :muscle:. but I wonder if the performance will be better if I use prioritized experience replay? So I will work on it, and if it gives a better result, I will share the results with you :grinning:
+
+In this environment, the agents can also work together to keep the ball in play as long as possible and get more rewards. Therefore I will implement the idea of the mixed cooperative competing multi-agent DDPG as mentioned in the paper [Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments](https://papers.nips.cc/paper/7217-multi-agent-actor-critic-for-mixed-cooperative-competitive-environments.pdf)
