@@ -60,8 +60,8 @@ Regarding the model I have experimented too much with it, I have tried different
 |1|2|[400,300]|2|[400,300]|:x:|
 |2|2|[400,300]|2|[400,300]|:heavy_check_mark:|
 |3|2|[400,300]|3|[400,300,300]|:heavy_check_mark:|
-|3|2|[400,300]|4|[128,64,64,32]|:heavy_check_mark:|
-|4|3|[400,300,300]|4|[128,64,64,32]|:heavy_check_mark: Best Results|
+|4|2|[400,300]|4|[128,64,64,32]|:heavy_check_mark:|
+|5|3|[400,300,300]|4|[128,64,64,32]|:heavy_check_mark: Best Results|
 
 
 **Actor Architecture**
