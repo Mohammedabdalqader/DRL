@@ -109,12 +109,21 @@ To start training your own agent, all you have to do is to follow the instructio
 
 # Future Work
 
-While working on this project I dealt with many algorithms that can be used to solve this problem. Some of these algorithms I have already implemented such as DDPG(not provided here) & D4PG, and there are other algorithms like :
+While working on this project, I had to invest too much time in research to find the right algorithms for such a problem. There were many options available to me, and this was a challenge for me, and from here my journey began.
 
-	- Proximal policy optimization (PPO) 
-	- Asynchronous Advantage Actor-Critic (A3C)
-	- Trust Region Policy Optimization (TRPO)
-	
-After implemnting these algorithms i will update this Repo and share the results with you :smiley:	
-	
+There is really a very useful [repo](https://github.com/ShangtongZhang/DeepRL) that describes and implements different algorithms that work very well for such a problem with continuous action space. Thanks to this repo and other sources, I was able to understand some algorithms correctly, including the DDPG, D4PG, PPO, A2C, and A3C algorithms, and I was able to implement some of these algorithms to solve my problem.
+
+Here are some Ideas for improvement:
+
+* Implementing TRPO, PPO, A3C, A2C algorithms:
+
+  It is worthwhile to implement all these algorithms, so I will work on it in the next days and see which of these algorithms converges   faster. 
+
+* Adjusting the Hyperparameters:
+
+  The more important step I can also take to improve the results and solve the problem with 100 episodes or even < 100 is to adjust the   hyperparameters. 
+
+* Using prioritized experience replay and N-step techniques:
+
+  As mentioned in this paper https://openreview.net/forum?id=SyZipzbCb using these techniques with D4PG could potentially lead to better  results
 
