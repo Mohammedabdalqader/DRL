@@ -1,6 +1,6 @@
 [//]: # (Image References)
 
-[actor-critic]: ../Continuous-Control/images/actor-critic.png "AC"
+[actor-critic]: ../../Continuous-Control/images/actor-critic.png "AC"
 [maddpg]: Collaboration_and_Competition/images/maddpg.png "MADDPG"
 
 
@@ -87,7 +87,7 @@ There were many hyperparameters involved in the experiment. The value of each of
 # Results
 | MADDPG (Multi-Agent Deep Deterministic Policy Gradient)|
 | ---------- |
-|![MADDPG][result]|
+|![MADDPG][maddpg]|
 
 # Future Work
 
