@@ -104,7 +104,7 @@ The desired average reward is achieved after 196 episodes.
 
 # Future Work
 
-After 2 months with the excellent knowledge that this course has given us, I can say that I have taken a big step towards mastering this area. I am able to implement different algorithms and to select a suitable one for each problem.
-In this project i have a chieved a very good result, in less than 200 episodes the target average reward achieved (> 0.50) and in 250 episode the average reward was 1.338 :muscle:. but I wonder if the performance will be better if I use prioritized experience replay? So I will work on it, and if it gives a better result, I will share the results with you :grinning:
+After 2 months with the excellent knowledge that this course has given us, I can say that I have taken a big step towards mastering this area. I am able to implement different deep reinforcement learning algorithms and to select a suitable one for each problem.
+In this project i have a chieved a very good result, in less than 200 episodes the target average reward achieved (> 0.50) and in 250 episode the average reward was 1.338 :muscle:. but I wonder if the performance will be better if I use **prioritized experience replay**? So I will work on it, and if it gives a better result, I will share the results with you :grinning:
 
-In this environment, the agents can also work together to keep the ball in play as long as possible and get more rewards. Therefore I will implement the idea of the mixed cooperative competing multi-agent DDPG as mentioned in the paper [Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments](https://papers.nips.cc/paper/7217-multi-agent-actor-critic-for-mixed-cooperative-competitive-environments.pdf)
+In this environment, the agents can also work together to keep the ball in play as long as possible and get more rewards. Therefore I will implement the idea of the **mixed cooperative competing multi-agent DDPG** as mentioned in the paper [Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments](https://papers.nips.cc/paper/7217-multi-agent-actor-critic-for-mixed-cooperative-competitive-environments.pdf)
