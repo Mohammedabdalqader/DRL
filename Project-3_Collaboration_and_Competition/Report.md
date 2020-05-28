@@ -96,6 +96,8 @@ There were many hyperparameters involved in the experiment. The value of each of
 | epsilon decay | 0.99 |
 
 # Results
+The desired average reward is achieved after 196 episodes.
+
 | MADDPG (Multi-Agent Deep Deterministic Policy Gradient)|
 | ---------- |
 |![MADDPG][maddpg]|
