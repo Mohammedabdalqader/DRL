@@ -46,7 +46,7 @@ To achieve the desired average score, a multi-agent DDPG (deep deterministic Pol
 
 Similar to the "Actor Critic" architecture with only one agent, each agent has its own network of actors and critics. The input for the actor network is the current state of the agent and the output is an suitable action for that agent in that state. The critic part, however, is slightly different from the usual single agent DDPG. Here the critic network of each agent has full visibility on the environment. It records not only the observation and action of this particular agent, but also the observations and actions of all other agents. (Collaboration and Competition Situation)
 
-But what I have implemented For this project is a **competitive version** of MADDPG (Multi-Agent Deep Deterministic Policy Gradient). Each agent has its own DDPG actor-critic architecture and does not communicate with other agents and the goal of each agent is to maximize their own returns.
+But what I have implemented For this project is a **competitive version** of MADDPG (Multi-Agent Deep Deterministic Policy Gradient). Each agent has its own DDPG actor-critic architecture and does not communicate with other agents (but sharing the same Memory) and the goal of each agent is to maximize their own returns.
 
 
 
